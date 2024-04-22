@@ -1,0 +1,214 @@
+------------------19 hour tutorial---------------------------------------------------------------------------------
+first create any project and make its virtual enviornmen  --> py -3 -m venv <environment name>
+2 --> then it crate a a folder with the name of "environment name"and the inside the folder --> "environment name" --> script --> python.exe   file there that will wrok as our new "interpeter" which will execute our code for that perticular virtual env
+
+3 --> for making it out default interpeter for virtual env = > go to "view" beside terminal in vs code select "commamnd pallet" search "python:select interpeter" and then search that perticular python.exe file and you will see "down  below in vs code some version and virtual folder name and venv " that means you create succesfuly
+
+4 --> along with this we need to make our terminal is virtual env too so that write in terminal "environment name\Scripts\activate.bat"
+
+5 ---> then pip install fastapi[all]  -> all the dependent packages are getting installed  and if you want to see what package type  "pip freeze"
+
+6 ---> write code in main.py  
+
+from fastapi import FastAPI
+
+app = FastAPI()   -->it is decorator
+
+
+@app.get("/")
+async def root():                     ---if you want to perform any asynchroneous task that time u can use it otherwise you can remove it 
+    return {"message": "Hello World"}   
+
+
+for run you can use "uvicorn main:app --reload"  and yeah there you go "happy codeing"
+
+
+7 -------------we are going use "Pydantic for validation"----------------------------------->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--------------------frw paython methods and their functions -------------------------
+
+
+
+
+
+
+from data import MyData
+# sum = 2+2
+# print(sum)
+# ----------------------------------------
+# taking input from user it will give you box to type and then print function run and it will give you the input value
+# Input = input("name: ")
+# print(Input)
+# ------------------------for integer-----------------------------
+# money = int(input("how much money you earn : "))
+# name =input("name :")
+# flot =float(input("chillar:"))
+# print(money,name,flot)
+# print(money,"moneyyyyy")
+# ----------------------conditional----------------------------
+# if(False):{
+#     print("yeahh true")
+# }
+# else: {
+#     print("o yeahh")
+# }
+# --------------------------------------------------
+# data =input("text:")
+# if(data =="hello"):{
+#   print("ha bro sucess")
+# }
+# elif(data == "hi") :{
+#     print("ok to hi hua hai")
+# }
+# else:{
+#     print("le kuch bhi ni aay ")
+# }
+# -----------------------syntactic sugar of if else--------------------------
+# count=30
+
+# condition = print("ha bhai") if count==20 or count ==30  else print("ni bhai")
+# print(condition)
+# -------------------------iska bhi new one ------------------------------------------
+# count =34
+# Check = (print("na bhai"),print("ha bhai"))[count==35] 
+# ----------------------------------------------------------------------
+
+# arr = ["hi","check1" ,"check2","check1","check1"]
+# print(arr.count("check1"))  #you can check how many times perticullar element is coming
+# ---------------------------------------------------------------------
+# arr = [14,5,8,79,6,4,5,8,9,6,1,2,3,4,5]
+
+# arr.sort()
+# print(arr) # it will do opration in the original array
+# -------------------------it will give you new sorted array-------------------------------------
+# arr = [14,5,8,79,6,4,5,8,9,6,1,2,3,4,5]
+
+# new = sorted(arr)
+# print(arr)
+# print(new)
+# ------------------------------reverse------------------------------------
+# arr = ["one","two","three","four"]
+# arr.reverse()
+# print(arr)
+# ----------------------------------copy any array--------------------------------------------
+# arr = ["check","check2","check3"]
+# arr2 = arr.copy()
+# print(arr2)
+# --------------------------------pop method same----------------------------------------
+# arr = ["check","check2","check3"]
+# arr.pop()
+# print(arr)
+# ----------------------remove---------------------------------------
+# arr = ["check","check2","check3"]
+# arr.remove("check2")
+# print(arr)
+# -------------------------functions----------------------------------
+# def shn(self,yes):
+#     print(self + "  "+ yes)
+
+# shn("wohoo","uu")    
+# -------------------------number in argument----------------------------------
+
+# def shn(yes,age):
+#     print("yo" + "  "+ yes + str(age))
+
+# shn("wohoo",20)   
+# --------------------------like rest oprator----------------------------
+# def shn(yes,age):
+#     print("yo" + "  "+ yes + str(age))
+
+# shn("wohoo",20)  
+# ------------------------------------------------------------------------
+# name = input("please enter your name")
+# age = input("enter your age")
+# def shn(content , age) :
+
+
+#     print(content  + "  " + age)
+# shn(name,age)
+# ------------------------------------------
+# my_Obj = {
+#     "name" : "shankar",
+#     "lname":"sahu",
+#     "age" :25,
+#     "arr" : ["check1" , "check2","check3","check4"]
+# }
+# print(type(my_Obj))
+#  --------------------while-----------------------
+# i = 1
+# while i <= 5 :
+#   print(i)  
+#   i+=1 
+# -------------------------for loop---------------------------
+# check = ["Fdfsfsdsdf", "fsfsdfs", "fsfsfsdf", "gdfgdfgdgd"]
+
+# for index, letter in enumerate(check):   ##enumerate using for put all values sequencly with index
+#     if letter == "fsfsfsdf":
+#         print("Index:", index, "Value:", letter)
+# --------------------------------------------------------------
+# Object = {
+#     "check":"shankar",
+#     "check2":"sahu",
+#     "age":25
+# }
+# for value in Object :
+#     print(value)
+# ---------------------------ek range dedeta hai yha tak tumhe krna hai-------------------------------------
+# for value in range(4,10):
+# #for value in 50:  ispe error aajayga
+#     print(value)
+# -------------------------2d  list --------------------------------
+# arr = [
+#     [1,2,3,4,5,6,7],
+#     [8,9,10,11,12,13],
+#     [14,15,16,17,18,19]
+# ]
+# print(arr[1][4])
+# ----------------------------------try execpt in python (it is like error handeling)-----------------------------------
+# try:
+#     x = int(input("please enter any number: "))
+#     print(x)
+# except:print("oops something went wrong...")
+# -------------------------inheretance----i'm inherite some values from another class-----------------------------
+
+# class GettingValue (MyData) :  # i'm importing Mydata from data.py
+#     pass
+# haBhai = GettingValue()
+# print(haBhai.name)
+# ----------------------------------created simple loging functionality----------------------------------------
+# print("welcome please create your account")
+# user_name = input("Please Enter Your Name : ")
+# user_Pass = input("Please Enter Password : ")
+# user_newPass = input("Please retype Password : ")
+# print("Account Create Successfully!")
+# print("Please Enter your crentials")
+# taking_pass = input("Please enter pass : ")
+# taking_newPass = input("Please enter new pass : ")
+# if (user_Pass == taking_pass and user_newPass == taking_newPass):
+#     print("login sucessfully")
+# else : 
+#     print("invalid pass")   
+# --------------------------------necessary commandsls-----------------------------------
+# -------> pip install django-deep-serializer
+# ---------> pip install django
+# ------------>pip install virtualenvwrapper-win
+# --------------->mkvirtual "test"  mene to test rakha tha folder ka nam
+# ------------------>now after above command u create a virtual environment now u need to install agai "pip install django"
+# ----------------------> django-admin startproject testProject   "it create a file with name testProject"
+# ----------------------------> workon test   "test" is a project name
+
+
+
